@@ -1,0 +1,14 @@
+Rule unknown ignore
+
+Given I send object 'my_credentials' and send path 'email_path' and send value 'email' and manipulate and set
+Given I send object 'my_credentials' and send path 'password_path' and send value 'password' and manipulate and set
+
+Given I connect to 'pb' and start pb client
+Given I send my_credentials 'my_credentials' and login
+
+Given I have a 'string' named 'email'
+
+When I create the 'string dictionary' named 'data'
+When I move 'email' in 'data'
+
+Then print the 'data'

@@ -1,0 +1,10 @@
+Given I have a 'string' named 'voucher'
+Given I have a 'number dictionary' named 'discounts'
+
+When I verify 'voucher' is found in 'discounts'
+
+When I create the 'string dictionary' named 'data'
+When I create copy of object named by 'voucher' from dictionary 'discounts'
+When I move 'copy' to 'discount' in 'data'
+
+Then print the 'data'

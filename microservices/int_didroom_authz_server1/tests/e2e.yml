@@ -1,0 +1,36 @@
+# - par
+# - authorize
+# - token
+# - 
+version: "1.1"
+name: test all the microservices
+env:
+  mz_host: localhost:3002
+  path_to_wallet: /mobile_zencode
+  ci_host: localhost:3001
+  as_host: localhost:3000
+  verifier_host: localhost:3004
+tests:
+  whole_flow:
+    name: Check the whole from from /par to /credential
+    $ref: tests/mobile_zencode/test/step_test.yml
+
+  creation:
+    name: PAR endpoint
+    steps:
+      - http:
+          url: http://${{env.as_host}}/par
+          method: POST
+          json:
+            response_type: code
+            client_id: did:dyne:sandbox.genericissuer:6Cp8mPUvJmQaMxQPSnNyhb74f9Ga4WqfXCkBneFgikm5
+            state: xyz
+            authorization_details: [{type: openid_credential, locations: [https://issuer1.zenswarm.forkbomb.eu/credential_issuer/], credential_configuration_id: Auth1, given_name: Pippo, family_name: Peppe, is_human: true}]
+            code_challenge: E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
+            code_challenge_method: S256
+            redirect_uri: didroom://openwallet-credential
+            client_secret: eyJhbGciOiJFUzI1NiJ9.eyJzdWIiOiJwaXBwbyJ9.hiVPL2JTdmcZY7Vcso95KUBEzcTGvmvQ7wlwkCo0G74Unpzny2drvLsu-HzHWyckKbRjwWox-V5gqqKeka8kEQ
+          check:
+            co2:
+              - lte: 0.01 # in grams
+            status: 201

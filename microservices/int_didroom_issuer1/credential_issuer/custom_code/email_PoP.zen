@@ -1,0 +1,8 @@
+Given I have a 'string' in path 'authorization_details.claims.email'
+and I have a 'time' named 'expires_in'
+
+When I create the 'string dictionary' named 'holder_claims'
+and I move 'email' in 'holder_claims'
+
+Then print the 'holder_claims'
+and print the 'expires_in'

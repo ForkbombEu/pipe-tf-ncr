@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "request_uri": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "client_id",
+    "request_uri"
+  ]
+}

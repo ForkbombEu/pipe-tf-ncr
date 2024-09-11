@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "voucher": {
+            "type": "string",
+            "title": "Voucher"
+        }
+    },
+    "required": [
+        "voucher"
+    ],
+    "form_fields": [
+        "voucher"
+    ],
+    "user_attributes": []
+}

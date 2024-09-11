@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "email": {
+            "type": "string",
+            "title": "Email"
+        },
+        "password": {
+            "type": "string",
+            "title": "Password"
+        }
+    },
+    "required": [
+        "email",
+        "password"
+    ],
+    "form_fields": [
+        "email",
+        "password"
+    ],
+    "user_attributes": []
+}
