@@ -1,6 +1,6 @@
 #!/bin/bash
 #install necessary packages
-sudo apt-get update -y
+sudo apt-get update 
 sudo apt-get install jq -y
 sudo apt-get install make -y
 sudo apt-get install netcat-openbsd -y
