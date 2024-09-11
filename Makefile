@@ -4,6 +4,8 @@
 
 all:
 	cd tf-ncr && \
+	ssh-keygen -t ed25519 -C "noOwnerName" -f ./testRsaKey && \
+	chmod 700 ./testRsaKey &&\
 	cd openTofuCode && \
 	tofu init && \
 	tofu apply -auto-approve > tofuApplyStdout.tmp && \
