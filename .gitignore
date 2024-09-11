@@ -1,0 +1,6 @@
+./tf-ncr/
+*.tfstate
+*.backup
+*.hcl
+*.tmp
+*.log
