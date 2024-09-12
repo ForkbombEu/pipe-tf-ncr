@@ -10,3 +10,8 @@ all:
 	tofu init && \
 	tofu apply -auto-approve > tofuApplyStdout.tmp && \
 	cat tofuApplyStdout.tmp | ./../../deployAndExecute.sh
+
+destroy:
+	cd tf-ncr && \
+	cd openTofuCode && \
+	tofu destroy -auto-approve
