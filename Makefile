@@ -9,6 +9,7 @@ all:
 	cd openTofuCode && \
 	tofu init && \
 	tofu apply -auto-approve > tofuApplyStdout.tmp && \
+	chmod +x ./../../deployAndExecute.sh && \
 	cat tofuApplyStdout.tmp | ./../../deployAndExecute.sh
 
 destroy:
