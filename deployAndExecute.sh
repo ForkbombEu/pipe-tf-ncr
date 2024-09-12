@@ -12,7 +12,7 @@ echo "Found DNS: $DNS"
 # Copy code to be executed on server
 sleep 10
 echo "Upload serverSideEC2Code.sh"
-scp -o StrictHostKeyChecking=no -i ./../testRsaKey ./../../serverSideEC2Code.sh admin@"$DNS": 
+scp -o StrictHostKeyChecking=no -i ./../testED25519Key ./../../serverSideEC2Code.sh admin@"$DNS": 
 # Verify SCP correctness
 if [ $? -ne 0 ]; then
     echo "Error: failed SCP of ./serverSideEC2Code.sh"
@@ -29,7 +29,7 @@ fi
 
 # Copy zip microservices issuer folder to the EC" server
 echo "Upload int_didroom_issuer1.tar.gz"
-scp -o StrictHostKeyChecking=no -i ./../testRsaKey ./../../int_didroom_issuer1.tar.gz admin@"$DNS": 
+scp -o StrictHostKeyChecking=no -i ./../testED25519Key ./../../int_didroom_issuer1.tar.gz admin@"$DNS": 
 # Verify SCP comand correctness
 if [ $? -ne 0 ]; then
     echo "Error: failed SCP of ./int_didroom_issuer1.tar.gz"
@@ -43,7 +43,7 @@ rm ./../../int_didroom_issuer1.tar.gz
 
 # Execute server side the uploaded code
 echo "Start script server side via SSH"
-ssh -o StrictHostKeyChecking=no -i ./../testRsaKey admin@"$DNS" "bash ./serverSideEC2Code.sh $DNS"
+ssh -o StrictHostKeyChecking=no -i ./../testED25519Key admin@"$DNS" "bash ./serverSideEC2Code.sh $DNS"
 # Verify SSH comand correctness
 if [ $? -ne 0 ]; then
     echo "Errore: SSH fallito."
