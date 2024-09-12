@@ -1,6 +1,14 @@
 #!/bin/bash
-#install necessary packages
+sleep 10
+# Ensure no other apt or dpkg processes are running
+sudo killall apt apt-get 2>/dev/null
+sudo rm /var/lib/dpkg/lock-frontend
+sudo rm /var/cache/apt/archives/lock
+
+# Wait a bit for lock removal
 sleep 2
+
+#install necessary packages
 sudo apt-get update 
 sudo apt-get install make jq netcat-openbsd -y
 
