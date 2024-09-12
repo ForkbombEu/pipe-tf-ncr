@@ -1,9 +1,7 @@
 #!/bin/bash
 #install necessary packages
-sudo apt-get update 
-sudo apt-get install jq -y
-sudo apt-get install make -y
-sudo apt-get install netcat-openbsd -y
+#sudo apt-get update 
+sudo apt-get install make jq netcat-openbsd -y
 
 # Ensure the DNS is passed as an argument
 if [ -z "$1" ]; then
