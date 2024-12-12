@@ -1,6 +1,7 @@
-# Build EC2 with ncr (trought tf-ncr) and install mircoservices in it with one simple comand
+# Deploy DIDroom Microservices on EC2
+Build EC2 with ncr (trought tf-ncr) and install mircoservices in it with one simple comand
 
-Makefile run opuentofu to start an aws EC2 and the install the microsercices/issuer1 code on it
+How this works: the Makefile runs *opentofu* to start an EC2 on AWS and the install the microservices code on it.  
 
 ## To clone the repo
 ```
